@@ -51,7 +51,7 @@ class DPTHeadTemporal(DPTHead):
                            **motion_module_kwargs)
         ])
 
-    def forward(self, out_features, patch_h, patch_w, frame_length, micro_batch_size=4, device="cuda"):
+    def forward(self, out_features, patch_h, patch_w, frame_length, device, micro_batch_size=4):
         out = []
         for i, x in enumerate(out_features):
             if self.use_clstoken:
